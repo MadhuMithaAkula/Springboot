@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Employee Form</title>
+	</head>
+	<body>
+		<h1>Employee Details Form</h1>
+		<form th:action="@{/savedetails}" method="post">
+			<label>Emp Id:</label>
+			<input type="number" name="EId" required><br><br>
+			
+			<label>Emp name:</label>
+			<input type="text" name="Ename" required><br><br>
+			
+			<label>Department:</label>
+			<input type="text" name="Department" required><br><br>
+			
+			<label>Age:</label>
+			<input type="number" name="Age" required><br><br>
+			
+			<label>Salary:</label>
+			<input type="number" name="Salary" required><br><br>
+				
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+	</body>
+</html>

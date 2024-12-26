@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Products</title>
+		<style>
+			.error{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Product Details Form</h1>
+		<form th:action="@{/saveproduct}" th:object="${product}" method="post">
+			
+			<label for="name"> Name:</label>
+			<input type="text" id="name" name="name" th:value="*{name}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+			
+			
+			
+			<label for="brand">Brand:</label>
+			<input type="text" id="brand" name="brand" th:value="*{brand}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></p>
+
+			
+			<label for="madein">Made In:</label>
+		    <input type="text" id="madein" name="madein" th:value="*{madein}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('madein')}" th:errors="*{madein}"></p>
+
+					
+			<label for="price">Price:</label>
+			<input type="number" id="price" name="price" th:value="*{price}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+
+			
+			<label for="quantity">Quantity:</label>
+			<input type="number" id="quantity" name="quantity" th:value="*{quantity}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+
+			
+			<label for="discountrate">Discountrate:</label>
+			<input type="number" id="discountrate" name="discountrate" th:value="*{discountrate}"/><br><br>
+			<p class="error" th:if="${#fields.hasErrors('discountrate')}" th:errors="*{discountrate}"></p>
+
+			
+	        <button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+	</body>
+</html>
